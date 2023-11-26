@@ -59,11 +59,13 @@ st.markdown(image_html, unsafe_allow_html=True)
 
 
 car_model=st.sidebar.selectbox("Select car's model", ('Audi A3', 'Opel Insignia', 'Audi A1', 'Opel Astra', 'Opel Corsa', 'Renault Clio', 'Renault Espace'))
-car_km=st.sidebar.slider("What's car's km", 0,400000, step=1000)
 # car_gear=st.sidebar.slider("What's car's Gear", 1.0,8.0, step=1)
 car_gear=st.sidebar.selectbox("Select car's Gear:",(1.0,2.0,3.0, 4.0, 5.0, 6.0, 7.0, 8.0))
 car_age=st.sidebar.selectbox("Select car's age:",(0,1,2,3))
+car_gearing_type=st.sidebar.selectbox("Select car's Gearing_Type", ('Automatic', 'Manual', 'Semi-automatic'))
+car_km=st.sidebar.slider("What's car's km", 0,350000, step=1000)
 car_hp_kW = st.sidebar.slider("Select car's hp_kw", 40, 300, step=5)
+car_wg = st.sidebar.slider("Select car's Weight in kg", 800, 2500, step=100)
 
 
 filename = "final_rf"
@@ -75,7 +77,9 @@ my_dict = {
     "km": car_km,
     "Gears": car_gear,
     "age": car_age,
-    "hp_kW": car_hp_kW
+    "hp_kW": car_hp_kW,
+    "Gearing_Type": car_gearing_type,
+    "Weight_kg": car_wg,
 }
 
 

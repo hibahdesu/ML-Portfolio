@@ -26,7 +26,7 @@ st.code("import pandas as pd\nimport numpy as np\ndf = pd.read_csv('df2.csv')\nd
 # Dataframe
 df = pd.read_csv('df2.csv')
 
-st.write(df.head())  
+st.write(df.head()[2:])  
 
 st.header('Describing the data')
 st.code('df.describe().T')
@@ -35,11 +35,11 @@ st.dataframe(df.describe().T)
 
 st.header('Null values in the data')
 st.code('df.isnull().sum()')
-st.write(df.isnull().sum()[1:])
+st.write(df.isnull().sum())
 
 st.header('Columns in the data')
 st.code('df.columns')
-st.write(df.columns[1:]) 
+st.write(df.columns) 
 
 
 st.title('Graphs')
